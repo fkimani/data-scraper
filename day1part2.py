@@ -1,4 +1,6 @@
-""" mydata = [
+""" 
+#test data
+mydata = [ 
     187,
     195,
     199,
@@ -48,16 +50,19 @@ for d in mydata:
             print(f'{a}+{b}+{c} = {mysum} (N/A - no previous sum)')
         if(mysum>prev_sum):
             sum_increase +=1
-            print(f'{a}+{b}+{c} = {mysum} (Increased from {prev_sum}. {mysum>prev_sum})' )
+            # print(f'{a}+{b}+{c} = {mysum} (Increased from {prev_sum}. {mysum>prev_sum})' )
+            print(f' {mysum} (Increased from {prev_sum}. )' )
         if(mysum<prev_sum):
-            print(f'{a}+{b}+{c} = {mysum}  (Decreased from {prev_sum}.  {mysum>prev_sum}) ')
+            # print(f'{a}+{b}+{c} = {mysum}  (Decreased from {prev_sum}.  {mysum>prev_sum}) ')
+            print(f' {mysum}  (Decreased from {prev_sum}. ) ')
             sum_decrease +=1
         i+=1
         j-=1
         prev_sum = mysum
-        
-print(f'sums list: {sums}')
-print(f'increased {sum_increase} times. Decreaseed {sum_decrease} times.')
-print(f'len sums: {len(sums)}')
+
+print(f'increased {sum_increase} times. Decreased {sum_decrease} times.')
+ 
+# print(f'sums list: {sums}')
+# print(f'len sums: {len(sums)}')
 
 
