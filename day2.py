@@ -16,20 +16,16 @@ Calculate the horizontal position and depth you would have after following the p
 # gameplan: Iterate through the data, for each line, add or sub the step taken
 
 # file
-# myfile = "sub-position.txt"
-myfile = "sub-position-sample.txt"
+myfile = "sub-position.txt"
+# myfile = "sub-position-sample.txt"
+# track computations
 fwd = 0
-up = []
-down = []
+up = 0
+down = 0
+mydata = []
 
 # returns file object
 f = open(myfile, 'r')
-
-mydata = []
-# mydata = [
-# "forward 9",
-# "forward 7",
-# ]
 
 # get digit from the row text
 #  https://stackoverflow.com/questions/12005558/python-find-digits-in-a-string/12005674
@@ -42,32 +38,25 @@ def get_digits(str1):
 
 # append data from file
 for line in f:
-    mydata.append(line) #convert to int to do number comparissons
-    
-    # print(mydata)
-    """ for l in line:
-        if l.isdigit():
-            print(f"{l} is digit.") """
-        
+    # mydata.append(line)
     digit = get_digits(line)
+    digit = int(digit)
     if 'forward' in line:
-        # print(type(get_digits(line)))
-        # digit
-        # digit = get_digits(line)
-        digit = int(digit)
-        # print(type(digit))
+        # print(f'{fwd} + {digit} = {fwd+digit}') 
         fwd += digit
-        # fwd.append(line)
-        print(f' {line}. add {digit}') 
     if 'up' in line:
-        up.append(line) 
-        print(f'{line} means subtract {digit}')
-    if 'down' in line:
-        down.append(line) 
-        print(f'{line} means add {digit} ')
+        # print(f' UP   {up} + {digit} = {up+digit}') 
+        up += digit
+    if 'down' in line: 
+        # print(f'    {down} + {digit} = {down+digit}') 
+        down += digit
  
 # for data in mydata:
 #     print(data)
 
 #sum of all 3 categories
 #deduct downs from up sum. multiply answer by forward.
+print(f'Up: {up} ; Down: {down} ; Fwd: {fwd}')
+down=down-up
+print(f'submarine horizontal position {down}* depth {fwd} = {down*fwd}')
+f.close()
