@@ -19,9 +19,9 @@ multiply your final horizontal position by your final depth?
 
 
 # file
-# myfile = "sub-position.txt"
+myfile = "sub-position.txt"
 # myfile = "sub-position-sample.txt"
-myfile = "test.txt"
+# myfile = "test.txt"
 # track positions
 horizontal_position = 0
 depth = 0
@@ -56,30 +56,22 @@ for line in f:
 
         horizontal_position += digit
         
-        # depth += aimx
-        # print(f' Forward: horizonal position is {horizontal_position} + {digit} = {horizontal_position+digit}. Depth ({depth} + {aimx}) = {depth}')
         if(aim==0):
-            print(f'FORWARD {digit} adds {digit} to your horizontal position, a total of {horizontal_position}. Because your aim is {aim}, your depth does not change. ' )
+            # print(f'FORWARD {digit} adds {digit} to your horizontal position, a total of {horizontal_position}. Because your aim is {aim}, your depth does not change. ' )
+            continue
         if(aim>0):
             aimx = aim*digit
             depth += aimx
-            print(f'FORWARD {digit} adds {digit} to your horizontal position, a total of {horizontal_position}. Because your aim is {aim}, your depth ({depth}) increases by {digit}*{aim}={digit*aim} or {aimx} to a total of {depth}.' )
+            # print(f'FORWARD {digit} adds {digit} to your horizontal position, a total of {horizontal_position}. Because your aim is {aim}, your depth ({depth}) increases by {digit}*{aim}={digit*aim} or {aimx} to a total of {depth}.' )
 
     if 'up' in line:
-        # print(f' Going UP  depth is {depth} - {digit} = {depth-digit}; AIM={aim-digit}')
-        # depth -= digit
         aim -= digit #up X decreases your aim by X units.
-        print(f'UP {digit} decreases your aim by {digit}, resulting in a value of {aim}.')
+        # print(f'UP {digit} decreases your aim by {digit}, resulting in a value of {aim}.')
     if 'down' in line:
-        # print(f'  Going DOWN depth is  {depth} + {digit} = {depth+digit}; AIM={aim +digit}')
-        # depth += digit
         aim += digit#down X increases your aim by X units.
-        print(f'DOWN {digit} adds {digit} to your aim, resulting in a value of {aim}.')
-    # Print vars
-    print(f'\nhorizontal_position = {horizontal_position}; depth = {depth}; aim = {aim}\n')
+        # print(f'DOWN {digit} adds {digit} to your aim, resulting in a value of {aim}.')
 
-print(f'After following these new instructions, you would have a horizontal position of {horizontal_position} and a depth of {depth}. (Multiplying these produces {horizontal_position*depth}.)')
+# print(f'After following these new instructions, you would have a horizontal position of {horizontal_position} and a depth of {depth}. (Multiplying these produces {horizontal_position*depth}.)')
 
-# print(f'Horizontal position: {horizontal_position}; Depth: {depth}.')
-# print(f'{horizontal_position} * {depth} = {horizontal_position*depth}')
+print(f'Horizontal position = {horizontal_position}; Depth = {depth}. NEW POSITION ({horizontal_position} * {depth}) = {horizontal_position*depth}')
 f.close()
