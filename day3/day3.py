@@ -14,26 +14,25 @@ myfile = "day3/data-sample.txt"
 
 # returns file object
 f = open(myfile, 'r')
+mydata = []
+gamma_rate = 0
+epsilon_rate = 0
 
 for line in f:
-    champ = 0
-    gamma_rate = 0
-    epsilon_rate = 0
-    ll = len(line)
-    i = 0
-    if(ll>0):
-        print(line[i])
-        
-    for l in line:
-        if(l=='0'):
-            print("\t ",l)
-            epsilon_rate += 1
-        if(l=='1'):
-            print("\t ",l)
-            gamma_rate += 1
-    ll -= 1
-    i += 1
-    print("------")
+    mydata.append(line)   
+    # for l in line:
+    #     if(l=='0'):
+    #         print("\t ",l)
+    #         epsilon_rate += 1
+    #     if(l=='1'):
+    #         print("\t ",l)
+    #         gamma_rate += 1
+    # ll -= 1
+    # i += 1
+    # print("------")
+for data in mydata:
+    for d in data:
+        print(d)
 
     # # print(f'gamma Rate={gamma_rate}; epsilon Rate={epsilon_rate} ')
     # if(gamma_rate>epsilon_rate):
