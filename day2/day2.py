@@ -16,8 +16,8 @@ Calculate the horizontal position and depth you would have after following the p
 # gameplan: Iterate through the data, for each line, add or sub the step taken
 
 # file
-myfile = "sub-position.txt"
-# myfile = "sub-position-sample.txt"
+myfile = "day2/sub-position.txt"
+# myfile = "day2/sub-position-sample.txt"
 # track computations
 fwd = 0
 up = 0
